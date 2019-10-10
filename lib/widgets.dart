@@ -13,3 +13,5 @@
 library nr_widgets;
 
 export 'package:flutter_util/src/widgets/text.dart';
+export 'package:flutter_util/src/widgets/image.dart';
+export 'package:flutter_util/src/widgets/button.dart';

@@ -13,3 +13,6 @@
 library nr_utils;
 
 export 'package:flutter_util/src/utils/tool.dart';
+export 'package:flutter_util/src/utils/common.dart';
+export 'package:flutter_util/src/utils/convert.dart';
+export 'package:flutter_util/src/utils/print.dart';
