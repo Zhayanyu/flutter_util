@@ -22,8 +22,7 @@ class NRButtonModel {
     this.padding,
   });
 
-  @JsonKey(
-      fromJson: NRConvert.parseButtonStyleType, toJson: NRConvert.buttonStyleTypeToJson)
+  @JsonKey(fromJson: NRConvert.parseButtonStyleType, toJson: NRConvert.buttonStyleTypeToJson)
   final ButtonStyleType type;
 
   final double minSize;

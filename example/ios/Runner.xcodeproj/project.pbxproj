@@ -81,7 +81,6 @@
 				D3CD8B43EB04A05D5DBB7FF0 /* Pods-Runner.release.xcconfig */,
 				4B5DEB95262C6EF4271AAC90 /* Pods-Runner.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -164,7 +163,6 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				F15C82155E1BFD07C1E249D0 /* [CP] Embed Pods Frameworks */,
-				61544BD049DBDB46E13EBB76 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,21 +234,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" thin";
-		};
-		61544BD049DBDB46E13EBB76 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		9740EEB61CF901F6004384FC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -406,7 +389,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuzu.meiqiaPluginExample;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nightRain.flutter-util";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -535,7 +518,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuzu.meiqiaPluginExample;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nightRain.flutter-util";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -558,7 +541,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuzu.meiqiaPluginExample;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nightRain.flutter-util";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};

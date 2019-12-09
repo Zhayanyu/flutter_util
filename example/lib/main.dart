@@ -33,17 +33,21 @@ class _MyAppState extends State<MyApp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  NRText('NRText展示'),
+                  NRText.title('60px title'),
+                  NRText.title('60px title red',textStyle: TextStyle(color: Colors.red),),
+                  NRText.body1('12px'),
                   NRText('数据为 String'),
                   NRText({'text': '数据为 Map'}),
                   NRText(NRTextModel(text: '数据为 NRTextModel')),
                   Container(
                     height: 20.0,
                   ),
-                  NRText('NRImage展示'),
-                  NRImage('http://file.zhile88.com/icathia/1.png',
-                      model: NRImageModel(height: 20.0, width: 20.0)),
+                  NRText.title('NRImage展示：'),
+                  NRText.body1('url：'),
+                  NRImage('http://file.zhile88.com/icathia/1.png', model: NRImageModel(height: 20.0, width: 20.0)),
+                  NRText.body1('assets：'),
                   NRImage('assets/2.png',model: NRImageModel(height: 20.0, width: 20.0)),
+                  NRText.body1('AssetImage：'),
                   NRImage(AssetImage('assets/3.png'),model: NRImageModel(height: 20.0, width: 20.0)),
                   Container(
                     height: 20.0,

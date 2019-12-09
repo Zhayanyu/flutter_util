@@ -14,7 +14,7 @@ enum TextStyleType {
 
 @JsonSerializable(includeIfNull: false)
 class NRTextModel {
-  NRTextModel({
+  const NRTextModel({
     this.text,
     this.textStyleType,
     this.textStyle,
@@ -92,7 +92,7 @@ class NRTextModel {
     return NRTextModel(
       text: text ?? this.text,
       textStyleType: textStyleType ?? this.textStyleType,
-      textStyle: textStyle ?? this.textStyle,
+      textStyle: this.textStyle != null ? this.textStyle.merge(textStyle) : textStyle,
       textAlign: textAlign ?? this.textAlign,
       textDirection: textDirection ?? this.textDirection,
       overflow: overflow ?? this.overflow,
