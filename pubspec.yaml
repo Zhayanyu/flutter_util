@@ -1,16 +1,16 @@
 name: flutter_util
 description: Some common widgets and functions.
-version: 0.0.5
+version: 0.1.3
 author: night_rain <a934806782@outlook.com>
 homepage: https://zhayanyu.github.io
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
-  intl: "^0.15.5"
+  intl: ^0.16.0
   json_annotation: ^3.0.0
-  cached_network_image: ^1.0.0
+  cached_network_image: ^2.0.0
   flutter:
     sdk: flutter
 

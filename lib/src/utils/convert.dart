@@ -199,12 +199,22 @@ class NRConvert {
     return enumValueToString(alignment);
   }
 
-  static TextStyle parseTextStyle(var value) {
-    return TextStyle();
+  static TextStyle parseTextStyle(Map value) {
+    if(value is Map){
+      return TextStyle(
+        fontWeight: parseFontWeight(value['fontWeight']),
+        fontSize: parseDouble(value['fontSize'],12.0),
+        color: parseColor(value['color']),
+      );
+    }
   }
 
   static Map textStyleToJson(TextStyle textStyle) {
-    return {};
+    return {
+      'fontWeight': parseInt(textStyle.fontWeight),
+      'fontSize':textStyle.fontSize,
+      'color':colorToInt(textStyle.color),
+    };
   }
 
   static TextAlign parseTextAlign(var value) {
@@ -420,8 +430,8 @@ class NRConvert {
     return Color(value);
   }
 
-  static String colorToString(Color color) {
-    return color.toString();
+  static int colorToInt(Color color) {
+    return color.value;
   }
 
   static double parseAutoFontSize(double value) {

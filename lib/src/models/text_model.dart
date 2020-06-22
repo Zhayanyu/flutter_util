@@ -17,7 +17,7 @@ class NRTextModel {
   const NRTextModel({
     this.text,
     this.textStyleType,
-    this.textStyle,
+    this.style,
     this.textAlign,
     this.textDirection,
     this.overflow,
@@ -35,7 +35,7 @@ class NRTextModel {
   final String text;
 
   @JsonKey(fromJson: NRConvert.parseTextStyle, toJson: NRConvert.textStyleToJson)
-  final TextStyle textStyle;
+  final TextStyle style;
 
   @JsonKey(fromJson: NRConvert.parseTextAlign, toJson: NRConvert.textAlignToJson)
   final TextAlign textAlign;
@@ -68,14 +68,14 @@ class NRTextModel {
   @JsonKey(fromJson: NRConvert.parseBorderRadius, toJson: NRConvert.borderRadiusToJson)
   final BorderRadius borderRadius;
 
-  @JsonKey(fromJson: NRConvert.parseColor, toJson: NRConvert.colorToString)
+  @JsonKey(fromJson: NRConvert.parseColor, toJson: NRConvert.colorToInt)
   final Color backgroundColor;
 
 
   NRTextModel copyWith({
     String text,
     TextStyleType textStyleType,
-    TextStyle textStyle,
+    TextStyle style,
     TextAlign textAlign,
     TextDirection textDirection,
     TextOverflow overflow,
@@ -92,7 +92,7 @@ class NRTextModel {
     return NRTextModel(
       text: text ?? this.text,
       textStyleType: textStyleType ?? this.textStyleType,
-      textStyle: this.textStyle != null ? this.textStyle.merge(textStyle) : textStyle,
+      style: this.style != null ? this.style.merge(style) : style,
       textAlign: textAlign ?? this.textAlign,
       textDirection: textDirection ?? this.textDirection,
       overflow: overflow ?? this.overflow,
@@ -114,7 +114,7 @@ class NRTextModel {
     return copyWith(
       text: other.text,
       textStyleType: other.textStyleType,
-      textStyle: other.textStyle,
+      style: other.style,
       textAlign: other.textAlign,
       textDirection: other.textDirection,
       overflow: other.overflow,

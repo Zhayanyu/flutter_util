@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   NRText.title('60px title'),
-                  NRText.title('60px title red',textStyle: TextStyle(color: Colors.red),),
+                  NRText.title('60px title red',style: TextStyle(color: Colors.red),),
                   NRText.body1('12px'),
                   NRText('数据为 String'),
                   NRText({'text': '数据为 Map'}),
@@ -66,10 +66,10 @@ class _MyAppState extends State<MyApp> {
                       child: NRText('material风格按钮'),
                       onPressed: () {},
                       model: NRButtonModel(type: ButtonStyleType.material)),
-                  NRButton(
+                  NRButton.cupertino(
                       child: NRText('cupertino风格按钮'),
                       onPressed: () {},
-                      model: NRButtonModel(type: ButtonStyleType.cupertino)),
+                  ),
                 ],
               ),
             ),

@@ -15,7 +15,7 @@ enum ButtonStyleType {
 
 @JsonSerializable(includeIfNull: false)
 class NRButtonModel {
-  NRButtonModel({
+  const NRButtonModel({
     this.type,
     this.minSize,
     this.pressedOpacity,

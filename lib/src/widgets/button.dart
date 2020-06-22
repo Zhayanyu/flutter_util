@@ -8,13 +8,29 @@ class NRButton extends StatelessWidget {
     @required this.child,
     @required this.onPressed,
     @required this.model,
-  }) : super(key: key);
+  }) :  _defaultModel=null,
+        super(key: key);
+
+  const NRButton.cupertino({
+    Key key,
+    @required this.child,
+    @required this.onPressed,
+    this.model,
+  }) :
+        _defaultModel= const NRButtonModel(
+          type: ButtonStyleType.cupertino,
+          padding: EdgeInsets.only(),
+          minSize: 20.0,
+          pressedOpacity: 0.7,
+        ),
+        super(key: key);
 
   final Widget child;
 
   final VoidCallback onPressed;
 
   final NRButtonModel model;
+  final NRButtonModel _defaultModel;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +54,7 @@ class NRButton extends StatelessWidget {
         }
       default:
         {
-          return buildButton(context,currentModel);
+          return buildCupertinoButton(context,currentModel);
         }
     }
   }
@@ -72,6 +88,7 @@ class NRButton extends StatelessWidget {
   }
 
   NRButtonModel getCurrentButtonModel() {
-    return this.model;
+    NRButtonModel model = _defaultModel ?? NRButtonModel();
+    return model.merge(this.model);
   }
 }

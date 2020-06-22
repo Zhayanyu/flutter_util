@@ -10,7 +10,7 @@ NRTextModel _$NRTextModelFromJson(Map<String, dynamic> json) {
   return NRTextModel(
     text: json['text'] as String,
     textStyleType: NRConvert.parseTextStyleType(json['textStyleType']),
-    textStyle: NRConvert.parseTextStyle(json['textStyle']),
+    style: NRConvert.parseTextStyle(json['style']),
     textAlign: NRConvert.parseTextAlign(json['textAlign']),
     textDirection: NRConvert.parseTextDirection(json['textDirection']),
     overflow: NRConvert.parseTextOverflow(json['overflow']),
@@ -36,7 +36,7 @@ Map<String, dynamic> _$NRTextModelToJson(NRTextModel instance) {
   }
 
   writeNotNull('text', instance.text);
-  writeNotNull('textStyle', NRConvert.textStyleToJson(instance.textStyle));
+  writeNotNull('style', NRConvert.textStyleToJson(instance.style));
   writeNotNull('textAlign', NRConvert.textAlignToJson(instance.textAlign));
   writeNotNull(
       'textDirection', NRConvert.parseTextDecoration(instance.textDirection));
@@ -55,6 +55,6 @@ Map<String, dynamic> _$NRTextModelToJson(NRTextModel instance) {
   writeNotNull(
       'borderRadius', NRConvert.borderRadiusToJson(instance.borderRadius));
   writeNotNull(
-      'backgroundColor', NRConvert.colorToString(instance.backgroundColor));
+      'backgroundColor', NRConvert.colorToInt(instance.backgroundColor));
   return val;
 }

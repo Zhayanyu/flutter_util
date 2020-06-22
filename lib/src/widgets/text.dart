@@ -2,47 +2,37 @@ import 'package:flutter/material.dart';
 import '../models/text_model.dart';
 
 class NRText extends StatelessWidget {
-  const NRText(this.data, {Key key, this.textStyle,this.model}) :
+  const NRText(this.data, {Key key, this.style, this.model})
+      : _defaultModel = null,
         super(key: key);
 
-  const NRText.data(this.data, {Key key,this.textStyle, this.model}) :
+  const NRText.data(this.data, {Key key, this.style, this.model})
+      : _defaultModel = null,
         super(key: key);
 
-  const NRText.title(this.data, {Key key,this.textStyle})
-      : this.model = const NRTextModel(
-            textStyle: TextStyle(
-          fontSize: 30,
-          fontWeight: FontWeight.w600,
-          color: Color(0xFF222222),
-        )),
+  const NRText.title(this.data, {Key key, this.style, this.model})
+      : _defaultModel = const NRTextModel(
+          style: TextStyle(fontSize: 30.0),
+        ),
         super(key: key);
 
-  const NRText.subTitle(this.data, {Key key, this.model,this.textStyle}) : super(key: key);
-
-  const NRText.display1(this.data, {Key key, this.model,this.textStyle}) : super(key: key);
-
-  const NRText.display2(this.data, {Key key, this.model,this.textStyle}) : super(key: key);
-
-  const NRText.display3(this.data, {Key key, this.model,this.textStyle}) : super(key: key);
-
-  const NRText.body1(this.data, {Key key,this.textStyle})
-      : this.model = const NRTextModel(
-            textStyle: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          color: Color(0xFF222222),
-        )),
+  const NRText.body1(this.data, {Key key, this.style, this.model})
+      : _defaultModel = const NRTextModel(
+          style: TextStyle(fontSize: 14.0),
+        ),
         super(key: key);
 
-  const NRText.body2(this.data, {Key key, this.model,this.textStyle}) : super(key: key);
-
-  /// data支持的类型[String,Map,List,NRTextModel]
+  /// data支持的类型[String,Map,List,NRTe
+  ///
+  ///
+  /// xtModel]
   /// 默认 null.
   final data; //原则上 data > model > defaultModel
 
-  final TextStyle textStyle;
+  final TextStyle style;
 
   final NRTextModel model;
+  final NRTextModel _defaultModel;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +57,7 @@ class NRText extends StatelessWidget {
   Widget _buildText(BuildContext context, NRTextModel model) {
     return Text(
       model.text,
-      style: model.textStyle,
+      style: model.style,
       maxLines: model.maxLines,
       textAlign: model.textAlign,
       textDirection: model.textDirection,
@@ -77,9 +67,9 @@ class NRText extends StatelessWidget {
   }
 
   NRTextModel getCurrentTextModel() {
-    NRTextModel model = NRTextModel(
-      textStyle: this.textStyle ?? const TextStyle()
-    );
+    NRTextModel model = _defaultModel ?? NRTextModel();
+    model = model.copyWith(style: this.style ?? TextStyle());
+
     if (this.data is String) {
       model = model.copyWith(text: this.data);
     } else if (this.data is Map) {
